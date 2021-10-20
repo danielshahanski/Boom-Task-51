@@ -9,7 +9,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body>
+  <body onload="hideNonActive()">
     <div class="main">
       <div class="card active">
         <div class="card-content">
@@ -83,5 +83,15 @@
         </footer>
       </div>
     </div>
+  <script>
+    function hideNonActive(){
+      setTimeout(function() {
+        var x = document.querySelectorAll('.card:not(.active)'), i;
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = 'none';
+        }
+      }, 3000);
+    }
+  </script>
   </body>
 </html>
